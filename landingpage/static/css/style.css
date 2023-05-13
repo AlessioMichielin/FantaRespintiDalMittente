@@ -1,0 +1,158 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+    background-color: #043E51;
+    padding-top: 60px;
+    border-radius: 10px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.contenitore-logo{
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* SCHEDA DELLA CLASSIFICA */
+
+.imgClassifica{
+  width: 70%;
+  height: auto;
+}
+
+
+
+/* LOGIN SETTINGS */
+
+.login {
+  width: 360px;
+  height: min-content;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  position: absolute;
+  top: 10%;
+}
+
+.login h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.login form {
+  font-size: 20px;
+}
+
+.login form .form-group {
+  margin-bottom: 12px;
+}
+
+.login form input[type="submit"] {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.btAnnullaLogin {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+
+
+/* PROFILE SETTINGS */
+
+.card{
+width: 500px;
+border: none;
+border-radius: 10px;
+ 
+background-color: #fff;
+}
+
+.puntiSfida{
+    background: #f2f5f8 !important;
+  color: #000 !important;
+}
+.boxPuntiSfida{
+font-size:10px;
+color: #a1aab9;
+}
+.number1{
+font-weight:500;
+}
+
+
+
+/* style profilo */
+.immagineProfilo{
+border-right: 10px solid rgba(255, 255, 255, 0);
+}
+
+
+
+/* OTHER */
+
+.logo-grande-alto{
+  padding-top: 0px;
+}
+
+
+
+/* BUTTONS */
+
+.buttonOutline {
+  --bs-btn-color: #1972B9;
+  --bs-btn-border-color: #1972B9;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #104e81;
+  --bs-btn-hover-border-color: #1972B9;
+  --bs-btn-focus-shadow-rgb: 13,110,253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #104e81;
+  --bs-btn-active-border-color: #1972B9;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #1972B9;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #1972B9;
+  --bs-gradient: none;
+
+  --bs-btn-padding-y: 0.25rem;
+  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-font-size: 0.875rem;
+}
+
+.buttonPrimary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #1972B9;
+  --bs-btn-border-color: #1972B9;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #104e81;
+  --bs-btn-hover-border-color: #104e81;
+  --bs-btn-focus-shadow-rgb: 49,132,253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #104e81;
+  --bs-btn-active-border-color: #104e81;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #1972B9;
+  --bs-btn-disabled-border-color: #1972B9;
+
+  --bs-btn-padding-y: 0.25rem;
+  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-font-size: 0.875rem;
+}

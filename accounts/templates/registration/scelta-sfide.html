@@ -1,0 +1,55 @@
+{% block head %}
+{% include "landingpage/partials/_headSceltaSfide.html" %}
+{% endblock %}
+
+{% block header %}
+{% include "landingpage/partials/_header.html" %}
+{% endblock %}
+
+<body>
+
+    <div class="container mt-4 d-flex justify-content-center">
+
+        <div class="card p-3">
+    
+            <div class="d-flex align-items-center">
+    
+                <div class="ml-3 w-100">
+    
+                    <h5 class="mb-0 mt-0">Scelta Sfide</h5>
+                    <span>Puoi scegliere <b>5 sfide.</b></span>
+
+                    <div class='listaCheckbox'>
+
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for field in sfide_form %}
+                            
+                            <p>
+                                {{ field }}
+                                {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </p>
+                            
+                            {% endfor %}
+                            
+                            <div class="mt-2 d-flex flex-row align-items-center">
+
+                                <a href="{% url 'accounts:profile' %}" class="btn btn-outline buttonOutline w-100 ml-2">Annulla</a>
+                                <input class="btn btn-sm btn-primary buttonPrimary w-100" type="submit" value="SCELTO">
+
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+                
+        </div>   
+         
+    </div>
+
+</body>

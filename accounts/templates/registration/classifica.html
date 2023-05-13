@@ -1,0 +1,50 @@
+{% block head %}
+{% include "landingpage/partials/_head.html" %}
+{% endblock %}
+
+{% block header %}
+{% include "landingpage/partials/_header.html" %}
+{% endblock %}
+
+<div class="container mt-4 d-flex justify-content-center">
+
+    <div class="card p-3">
+
+        <div class="d-flex align-items-center">
+
+            <div class="ml-3 w-100">
+
+                <h5 class="mb-0 mt-0">Classifica</h5>
+                <div class="mt-2 flex-row">
+
+                    <p>
+                        <span>Clicca il tasto per aggiornare la classifica</span>
+                        <a href="{% url 'accounts:classifica' %}" class="btn btn-sm btn-outline-primary align-left" type="button">aggiorna</a>
+                    </p>
+
+                </div>
+                
+                <table class="table table-striped">
+
+                    {% for userData in data %}
+                    <tr>
+                        <td>
+                            <img src="{{ userData.foto.url }}" class="rounded imgClassifica" width="155" alt="immagine-profilo">
+                        </td>
+                        <td>
+                            <h4>{{ userData.user }}<h4>
+                        </td>
+                        <td>
+                            <h3>{{ userData.puntitotali }}<h3>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+        </div>
+            
+    </div>   
+     
+ </div>

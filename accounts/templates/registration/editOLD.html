@@ -1,0 +1,64 @@
+{% block head %}
+{% include "landingpage/partials/_head.html" %}
+{% endblock %}
+
+{% block header %}
+{% include "landingpage/partials/_header.html" %}
+{% endblock %}
+
+<div class="container">
+
+<h2>Modifica il tuo profilo</h2>
+
+{% if form.errors %}
+<div class="alert alert-warning" role="alert">
+    Your username and password didn't match. Please try again.
+</div>
+{% endif %}
+
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+
+<!--
+{{ user_form.as_p }}
+-->
+
+{% for field in user_form %}
+
+<p>
+    {{ field.label_tag }}
+    {{ field }}
+    {% if field.help_txt %}
+        <small style="color: grey">{{ field.help_text }}</small>
+    {% endif %}
+    {% for error in field.errors %}
+    <p style="color: red">{{ error }}</p>
+    {% endfor %}
+</p>
+
+{% endfor %}
+
+<!--
+{{ profile_form.as_p }}
+-->
+
+{% for field in profile_form %}
+
+<p>
+    {{ field.label_tag }}
+    {{ field }}
+    {% if field.help_txt %}
+        <small style="color: grey">{{ field.help_text }}</small>
+    {% endif %}
+    {% for error in field.errors %}
+    <p style="color: red">{{ error }}</p>
+    {% endfor %}
+</p>
+
+{% endfor %}
+
+<input type="submit" value="Conferma">
+<a href="{% url 'accounts:profile' %}" class="btn btn-outline-primary">Annulla</a>
+</form>
+
+</div>

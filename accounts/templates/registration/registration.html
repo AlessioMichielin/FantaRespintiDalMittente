@@ -1,0 +1,43 @@
+{% block head %}
+{% include "landingpage/partials/_head.html" %}
+{% endblock %}
+
+{% block header %}
+{% include "landingpage/partials/_header.html" %}
+{% endblock %}
+
+<body>
+
+    <div class="container">
+
+        <div class="row justify-content-center align items-center inner-row">
+
+            <div class="login">
+
+                <h1 class="text-center">Registrati</h1>
+                
+                <form method="post" class="needs-validation">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form-group was-validated">
+                        <label class="form-label">{{ field.label_tag }}</label>
+                        {{ field }}
+                        <div class="invalid-feedback">
+                            Campo Obligatorio
+                        </div>
+                    </div>
+                    {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+
+                    {% endfor %}
+                    <input class="btn btn-success w-100" type="submit" value="REGISTRATI">
+                </form>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
