@@ -18,6 +18,8 @@
     
                     <h5 class="mb-0 mt-0">Scelta Sfide</h5>
                     <span>Puoi scegliere <b>5 sfide.</b></span>
+                    <br>
+                    <span style="color: red"><b>Una volta scelte non potranno essere modificate.</b></span>
 
                     <div class='listaCheckbox'>
 
@@ -28,7 +30,9 @@
                             <p>
                                 {{ field }}
                                 {% for error in field.errors %}
-                                <p style="color: red">{{ error }}</p>
+                                <div class="alert alert-danger" role="alert">
+                                    {{ error }}
+                                </div>
                                 {% endfor %}
                             </p>
                             
@@ -37,9 +41,10 @@
                             <div class="mt-2 d-flex flex-row align-items-center">
 
                                 <a href="{% url 'accounts:profile' %}" class="btn btn-outline buttonOutline w-100 ml-2">Annulla</a>
-                                <input class="btn btn-sm btn-primary buttonPrimary w-100" type="submit" value="SCELTO">
+                                <input class="btn btn-sm btn-primary buttonPrimary w-100" type="submit" value="HO SCELTO">
 
                             </div>
+
                         </form>
 
                     </div>

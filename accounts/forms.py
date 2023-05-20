@@ -25,20 +25,16 @@ class UserLoginForm(forms.Form):
             'aria-autocomplete':'list'
         })
 
-    def clean(self,*args,**kwargs):
+    def clean(self):
         username=self.cleaned_data.get('username')
         password=self.cleaned_data.get('password')
 
         if username and password:
             user=authenticate(username=username,password=password)
+            if not user or not user.is_active:
+                raise forms.ValidationError("C'è qualcosa di sbagliato. Riprova.")
+            return self.cleaned_data
 
-            if not user:
-                raise forms.ValidationError("L'utente non esiste")
-            
-            if not user.check_password(password):
-                raise forms.ValidationError("Password non coretta")
-        
-        return super(UserLoginForm, self).clean(*args,**kwargs)
 
 user=get_user_model()
 
@@ -131,7 +127,7 @@ class SfideForm(forms.ModelForm):
                         queryset=Sfide.objects.all().order_by('punti'),
                         label="sfide",
                         widget=forms.CheckboxSelectMultiple,
-                        required=True)
+                        required=False)
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -139,6 +135,15 @@ class SfideForm(forms.ModelForm):
             'type':'checkbox',
             'class':'listaCheckbox',
         })
+
+# Controllo che non vengano scelte più di 5 sfide
+    def clean_sfide(self):
+        value = self.cleaned_data['sfide']
+        if len(value) > 5:
+            raise forms.ValidationError("Hei! Puoi scegliere massimo 5 sfide.")
+        if len(value) == 0:
+            raise forms.ValidationError("Non è stata scelta alcuna sfida.")
+        return value
 
     class Meta:
       model = Profile

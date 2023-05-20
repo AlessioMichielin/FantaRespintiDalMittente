@@ -76,6 +76,20 @@ img{
 
 /* PROFILE SETTINGS */
 
+.cardSpecial{
+width: 500px;
+border-width: 3px 3px 3px 3px;
+border-style: solid;
+border-color: #20c997;
+border-radius: 10px;
+ 
+background-color: #fff;
+}
+
+.notificaPill{
+background-color: #20c997
+}
+
 .card{
 width: 500px;
 border: none;

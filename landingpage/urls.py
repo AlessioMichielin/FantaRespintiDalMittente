@@ -21,4 +21,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='landingpage'),
     path('lista-sfide/', views.ListaSfideView.as_view(), name='lista-sfide'),
+    path('regole/', views.regole, name='regole'),
 ]

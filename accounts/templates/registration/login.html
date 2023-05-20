@@ -6,27 +6,6 @@
 {% include "landingpage/partials/_header.html" %}
 {% endblock %}
 
-{% if form.errors %}
-<div class="alert alert-warning" role="alert">
-    Il tuo utente o la password sono errati. Riprova.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-{% endif %}
-
-
-{% if next %}
-    {% if user.is_authenticated %}
-    <div class="alert alert-warning" role="alert">
-        Il tuo utente non ha accesso a questa pagina. Per procedere, effettua il login.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endif %}
-{% endif %}
-
 
 <body>
 
@@ -42,13 +21,13 @@
                     {% csrf_token %}
 
                     <div class="form-group">
-                        <label class="form-label" for="username">{{ form.username.label_tag }}</label>
-                        {{ form.username }}
+                        <label class="form-label" for="username">{{ form_login.username.label_tag }}</label>
+                        {{ form_login.username }}
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="password">{{ form.password.label_tag }}</label>
-                        {{ form.password }}
+                        <label class="form-label" for="password">{{ form_login.password.label_tag }}</label>
+                        {{ form_login.password }}
                     </div>
 
                     <input class="btn btn-success w-100" type="submit" value="LOGIN">

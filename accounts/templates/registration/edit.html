@@ -31,9 +31,13 @@
                         <div class="form-group">
                             <label class="form-label">{{ field.label_tag }}</label>
                             {{ field }}
-                            {% for error in field.errors %}
-                            <p style="color: red">{{ error }}</p>
-                            {% endfor %}
+                            <p>
+                                {% for error in field.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{ error }}
+                                </div>
+                                {% endfor %}
+                            </p>
                         </div>
 
                     {% endfor %}
@@ -43,9 +47,13 @@
                     <div class="form-group">
 
                         {{ field }}
-                        {% for error in field.errors %}
-                        <p style="color: red">{{ error }}</p>
-                        {% endfor %}
+                        <p>
+                            {% for error in field.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                            {% endfor %}
+                        </p>
                     </div>
 
                     {% endfor %}

@@ -7,6 +7,9 @@ from django.views.generic.base import TemplateView
 def index(request):
     return render(request, 'landingpage/index.html')
 
+def regole(request):
+    return render(request, 'landingpage/regole.html')
+
 class ListaSfideView(TemplateView):
     
     template_name = 'landingpage/lista-sfide.html'

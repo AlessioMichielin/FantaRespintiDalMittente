@@ -27,7 +27,7 @@ def login_view(request):
     
     else:
         form = UserLoginForm()
-    return render(request, "registration/login.html", {'form': form})
+    return render(request, "registration/login.html", {'form_login': form})
 
 
 def register(request):
@@ -71,11 +71,8 @@ def sceltaSfida(request):
         sfide_form = SfideForm(request.POST, instance=request.user.profile)
         if sfide_form.is_valid():
             sfide_form.save()
-            messages.success(request, "Sfide scelte!")
             return redirect('accounts:profile')
-        else:
-            messages.error(request, "Sfide non scelte.")
-            return render(request, 'registration/scelta-sfide.html', {'sfide_form' : sfide_form})
+        
     else:
         sfide_form = SfideForm(instance=request.user.profile)
     return render(request, 'registration/scelta-sfide.html', {'sfide_form' : sfide_form})
@@ -85,5 +82,3 @@ def sceltaSfida(request):
 def showallusers(request):
     data = Profile.objects.filter(Q(user__is_superuser=False), Q(user__is_staff=False)).order_by('-puntitotali')
     return render(request, "registration/classifica.html", {'data': data})
-
-

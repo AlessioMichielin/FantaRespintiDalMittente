@@ -48,7 +48,7 @@
         <div class="text-center">
 
           <p>
-            <a href=# class="btn btn-outline-primary buttonOutline" type="button">Regole</a>
+            <a href="{% url 'regole' %}" class="btn btn-outline-primary buttonOutline" type="button">Regole</a>
             <a href="{% url 'lista-sfide' %}" class="btn btn-outline-primary buttonOutline ml-2" type="button">Lista Sfide</a>
           </p>
                   
@@ -61,7 +61,9 @@
         <div class="ml-3 w-100 text-center">
 
           <p>            
-            <span>Benvenuto/a nella prima edizione del Fanta Longato per festeggiare i 50 anni che l'azienda compie!</span>
+            <span>Benvenuto/a nella prima edizione del FantaLongato per festeggiare i 50 anni che l'azienda compie!</span>
+            <br>
+            <span>L'evento inizierà il <b>16 Giugno 2023</b>, nel frattempo clicca il pulsante qui sotto e registrati per iniziare a giocare.</span>
           </p>
 
         </div>
@@ -80,14 +82,16 @@
 
   <div class="container mt-4 d-flex justify-content-center">
 
-    <div class="card p-3">
+    <div class="card p-3 cardSpecialIndex">
       
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center text-center">
       
         <div class="ml-3 w-100">
                       
           <h5 class="mb-0 mt-0 text-center">⚠️ATTENZIONE⚠️</h5>
-          <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+          <span>Se hai cliccato un link finendo in questa pagina significa che sei uno dei pochi eletti che è stato selezionato per partecipare alla prima edizione del FantaLongato! Complimenti!</span>
+          <br>
+          <span>Mi raccomando divertiti, festeggia e non inviare questo link a <b>nessuno</b>.</span>
       
         </div>
 

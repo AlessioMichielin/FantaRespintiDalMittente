@@ -68,3 +68,13 @@ border-radius: 10px;
  
 background-color: #fff;
 }
+
+.cardSpecialIndex{
+  width: 500px;
+  border-width: 3px 3px 3px 3px;
+  border-style: solid;
+  border-color: #ffb02e;
+  border-radius: 10px;
+   
+  background-color: #fff;
+  }
